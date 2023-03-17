@@ -1,6 +1,6 @@
 #### A Card Faud Detector
 
-* Given data, this api helps detect a fraudulent act on a card
+* Given data, this api helps detect a fraudulent act on a credit card
 * Highly Trained model Machine Learning Model is being Used 
 
 #### Software And Tools Requirements.
