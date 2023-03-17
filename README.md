@@ -13,3 +13,11 @@ Create a new environment
 ```
 conda create -p venv python==3.10 -y
 ```
+### Front end frame work
+
+1. html
+2. css 
+
+## Backend Frame work
+
+1. Flask 
