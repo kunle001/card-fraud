@@ -25,5 +25,18 @@ def predict_api():
         awnser= "A fraudulet act occurs"
     return jsonify(awnser)
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    data=[float(x) for x in request.form.values()]
+    print(data)
+    final_input= scaler.transform(np.array(data).reshape(1,-1))
+    # print(final_input)
+    prediction=model.predict(final_input)
+    awnser= 'No Fradulent Activty on this card'
+    if prediction[0]==1:
+        awnser= 'A Fraudulent Act Occured!!'
+    # print(jsonify(awnser))
+    return render_template("home.html",prediction_text= awnser)
+
 if __name__=="__main__":
     app.run(debug=True)
