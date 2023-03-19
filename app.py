@@ -7,12 +7,12 @@ app= Flask(__name__)
 
 # Load the model
 model= load('detectorModel.joblib')
-#loading my scaler
+# #loading my scaler
 scaler= load('scaler.joblib')
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route('/predict_api', methods=["POST"])
 def predict_api():
@@ -24,6 +24,9 @@ def predict_api():
     if prediction[0]==1:
         awnser= "A fraudulet act occurs"
     return jsonify(awnser)
+@app.route('/predict/fraud', methods=['GET'])
+def predict_page():
+    return render_template('home.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():

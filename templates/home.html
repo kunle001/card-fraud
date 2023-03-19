@@ -87,11 +87,32 @@
         font-size: medium;
         font-family: Arial, Helvetica, sans-serif;
       }
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .topic {
+        flex: 1;
+        text-align: center;
+      }
+      .home {
+        margin-right: 20px;
+      }
 
   </style>
   <body>
     <header>
-      <h1>Card Fraud Detection</h1>
+      <div class="top">
+        <div class="home">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <use xlink:href="/"></use>
+          </svg>
+        </div>
+        <div class="topic">
+          <h1>Card Fraud Detection</h1>
+        </div>
+      </div>
     </header>
     <div class="container">
       <form class="form" action="{{ url_for('predict')}}" method="post">
